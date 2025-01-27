@@ -44,10 +44,10 @@ const Main = () => {
 
                                 </div>
                             </article>
-                        );
+                        )
 
 
-                    })};
+                    })}
 
 
 
