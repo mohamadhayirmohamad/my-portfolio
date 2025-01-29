@@ -4,22 +4,22 @@ import { useState } from 'react'
 import './Main.css'
 const myprojects = [
 
-    { projectTitle: "react project", category: "react", imgPath: "a" },
+    { projectTitle: "react project", category: ["react"], imgPath: "a" },
 
 
 
 
-    { projectTitle: "css project", category: "css", imgPath: "./wp5134484.webp" },
+    { projectTitle: "css project", category: ["css"], imgPath: "./wp5134484.webp" },
 
 
 
 
 
-    { projectTitle: "js project", category: "jss", imgPath: "./wp5134484.webp" },
+    { projectTitle: "js project", category: ["jss"], imgPath: "./wp5134484.webp" },
 
 
 
-    { projectTitle: "boot project", category: "boot", imgPath: "gh" },
+    { projectTitle: "boot project & cod", category: ["boot", "cod"], imgPath: "gh" },
 
 
 ]
@@ -33,6 +33,38 @@ const Main = () => {
     const [currentActive, setcurrentActive] = useState("all");
 
     const [arr, setArr] = useState(myprojects);
+
+    const handleClick = (buttonCategory) => {
+
+
+        setcurrentActive(buttonCategory)
+
+        const newArr = myprojects.filter((item) => {
+
+            const zzz = item.category.find((myitem) => {
+                return myitem === buttonCategory
+            })
+
+
+
+
+            return zzz === buttonCategory
+        })
+        setArr(newArr)
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
     return (
         <>
             <main className='flex '>
@@ -45,56 +77,35 @@ const Main = () => {
                     <button onClick={() => {
                         setcurrentActive("all");
 
-                        const newArr = myprojects.filter((item) => {
-                            return item.category === "all"
+                     setArr(myprojects)
 
-                        })
-
-                        setArr(newArr)
                     }} className={currentActive === "all" ? "active" : null}>All Projects</button>
 
 
 
 
                     <button onClick={() => {
-                        setcurrentActive("css")
-                        const newArr = myprojects.filter((item) => {
-                            return item.category === "css"
-
-                        })
-                        setArr(newArr)
+                        handleClick("css")
 
                     }} className={currentActive === "css" ? "active" : null} >HTML & CSS </button>
 
 
 
-                    <button onClick={() => {
-                        setcurrentActive("jss")
-                        const newArr = myprojects.filter((item) => {
-                            return item.category === "jss"
 
-                        })
-                        setArr(newArr)
-
-
-                    }} className={currentActive === "jss" ? "active" : null}
-
-                    >JavaScript</button>
 
 
 
                     <button onClick={() => {
-                        setcurrentActive("react")
+                        handleClick("jss")
 
-                        const newArr = myprojects.filter((item) => {
-                            return item.category === "react"
 
-                        })
-                        setArr(newArr)
+                    }} className={currentActive === "jss" ? "active" : null}>JavaScript</button>
 
-                    }} className={currentActive === "react" ? "active" : null}
 
-                    >React & CSS </button>
+
+                    <button onClick={() => {
+                        handleClick("react")
+                    }} className={currentActive === "react" ? "active" : null}>React & CSS </button>
 
 
 
@@ -113,14 +124,9 @@ const Main = () => {
 
 
                     <button onClick={() => {
-                        setcurrentActive("boot")
-                        const newArr = myprojects.filter((item) => {
-                            return item.category === "boot"
-                        })
-                        setArr(newArr)
-                    }} className={currentActive === "boot" ? "active" : null}
+                        handleClick("boot")
 
-                    >React & Bootstrap </button>
+                    }} className={currentActive === "boot" ? "active" : null}>React & Bootstrap </button>
 
 
 
