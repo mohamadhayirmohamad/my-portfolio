@@ -23,6 +23,7 @@ section.hero {
 section.hero .parent-avatar.flex {
   gap: 0.6rem;
   align-items: end;
+  min-height: 99px;
 }
 
 section.hero .icon-verified {

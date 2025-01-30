@@ -1,4 +1,5 @@
 import './Hero.css'
+import { motion } from 'motion/react';
 import Lottie from "lottie-react";
 import devAnimation from "./../../../public/animation/Animation - 1738250495743.json"
 const Hero = () => {
@@ -6,13 +7,33 @@ const Hero = () => {
         <section className='hero flex'>
             <div className="left-section ">
                 <div className="parent-avatar flex">
-                    <img className='avatar' src="./e6a8cdd9-8b6a-4dd3-904c-ac440c780254.jpg" alt="" />
+                    <motion.img
+                    
+                    initial={{scale: 0}}
+                
+                    animate={{scale: 1}}
+    
+                    transition={{duration:0.7 , type : "spring" , stiffness: 100}}
+                    
+                    
+                    className='avatar' src="./e6a8cdd9-8b6a-4dd3-904c-ac440c780254.jpg" alt="" />
                     <div className='icon-verified'></div>
 
 
                 </div>
 
-                <h1 className='title'>  Hello, I am a Full Stack Web Developer.</h1>
+                <  motion.h1 
+                initial={{opacity: 0}}
+                
+                animate={{opacity: 1}}
+
+                transition={{duration:2}}
+
+                
+                className='title'>  Hello, I am a Full Stack Web Developer.
+                </ motion.h1>
+
+
                 <p className='sub-title'>Hello, I am Mohamed Khair Mohamed, a Full Stack Web Developer, and I am based in Turkey.</p>
 
 <div className="all-icons flex">

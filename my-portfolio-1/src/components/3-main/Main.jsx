@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import './Main.css'
 import { myProjects } from './myprojects';
-
+import { AnimatePresence, motion } from 'motion/react';
 
 
 
@@ -109,40 +109,52 @@ const Main = () => {
 
 
                 <section className=' right-section  flex '>
+                    <AnimatePresence>
 
-
-                    {arr.map((item) => {
-                        return (
-                            <article key={item.imgPath} className=' card'>
-                                <img width={266} src={item.imgPath} alt="" />
-
-
-                                <div style={{ width: "266px" }} className="box ">
-                                    <h1 className='title'>{item.projectTitle}</h1>
-                                    <p className='sub-title'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam consectetur esse alias? </p>
+                        {arr.map((item) => {
+                            return (
 
 
 
-                                    <div className="flex icons">
-                                        <div style={{ gap: "12px" }} className="flex ">
-                                            <div className="icon-link"></div>
-                                            <div className="icon-github"></div>
+                                <motion.article
+
+layout 
+initial={{transform: "scale(0)"}}
+animate= {{transform: "scale(1)"}}
+transition={{type: "spring"}}
+
+
+
+                                    key={item.imgPath} className=' card'>
+                                    <img width={266} src={item.imgPath} alt="" />
+
+
+                                    <div style={{ width: "266px" }} className="box ">
+                                        <h1 className='title'>{item.projectTitle}</h1>
+                                        <p className='sub-title'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam consectetur esse alias? </p>
+
+
+
+                                        <div className="flex icons">
+                                            <div style={{ gap: "12px" }} className="flex ">
+                                                <div className="icon-link"></div>
+                                                <div className="icon-github"></div>
+                                            </div>
+
+
+                                            <a className='link flex' href=""  > more
+                                                <span style={{ alignSelf: "center" }} className='icon-arrow-right'></span>
+                                            </a>
                                         </div>
 
-
-                                        <a className='link flex' href=""  > more
-                                            <span style={{ alignSelf: "center" }} className='icon-arrow-right'></span>
-                                        </a>
                                     </div>
-
-                                </div>
-                            </article>
-                        )
+                                </motion.article>
+                            )
 
 
-                    })}
+                        })}
 
-
+                    </AnimatePresence>
 
                 </section>
 
