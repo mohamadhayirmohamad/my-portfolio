@@ -48,6 +48,10 @@ main section.left-section.flex button.active {
   border: 1px solid var(--yello);
 }
 
+.light main section.left-section.flex button.active {
+  border: 1px solid #000;
+}
+
 /* =====================
 2. Right-section ==> cards
 =========================
@@ -62,6 +66,7 @@ main section.right-section.flex {
 }
 
 .card {
+  box-shadow: -1px 3px 13px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(118, 104, 21, 0.682);
   transition: 0.3s;
   border-radius: 5px;
@@ -69,6 +74,18 @@ main section.right-section.flex {
     rgba(255, 255, 255, 0.05),
     rgba(255, 255, 255, 0.05)
   );
+}
+
+
+.light .card:hover{
+background-color:rgb(243, 243, 243);
+
+}
+
+
+.light .card  ,.light .card:hover
+{
+border: none;
 }
 
 .card:hover {

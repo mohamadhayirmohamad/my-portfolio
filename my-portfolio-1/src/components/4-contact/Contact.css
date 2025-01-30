@@ -32,15 +32,31 @@ section.contact-us #message {
   font-size: 1.1rem;
 }
 
-section.contact-us #email:focus,
-section.contact-us #message:focus {
+.light section.contact-us #email,
+.light section.contact-us #message {
+  background-color: rgba(244, 244, 244, 0.51);
+  border: 1px solid rgb(128, 128, 128, 0.451);
+  box-shadow: 1px 2px 10px rgba(73, 73, 75, 0.105);
+  color: #232324;
+}
+
+ section.contact-us #email:focus,
+ section.contact-us #message:focus,
+ section.contact-us #email:hover,
+ section.contact-us #message:hover {
   border: 1px solid rgb(45, 212, 191);
 }
 
-section.contact-us #email:hover,
-section.contact-us #message:hover {
-  border: 1px solid rgb(45, 212, 191);
+
+.light section.contact-us #email:focus,
+.light section.contact-us #message:focus,
+.light section.contact-us #email:hover,
+.light section.contact-us #message:hover {
+ border: 1px solid rgb(64, 69, 68);
 }
+
+
+
 
 section.contact-us #message {
   min-height: 9rem;
@@ -68,6 +84,14 @@ section.contact-us .submit:hover {
 =========================
 */
 
+@media (max-width: 1250px){
+.contact-animation{
+  display: none;
+}
+
+}
+
+
 @media (max-width: 600px) {
   section.contact-us .animation {
     display: none;
@@ -77,7 +101,6 @@ section.contact-us .submit:hover {
     display: flex;
     flex-direction: column;
     width: 85%;
-   
   }
 
   section.contact-us form div.flex {
@@ -87,22 +110,14 @@ section.contact-us .submit:hover {
 
   section.contact-us #email,
   section.contact-us #message {
-
-
-width: 100%;
-padding: 0.7rem 0;
-margin-left: 0;
-margin-top: 1rem;
-
-
+    width: 100%;
+    padding: 0.7rem 0;
+    margin-left: 0;
+    margin-top: 1rem;
   }
 
   section.contact-us .submit {
-width: 30%;
-align-self: center;
-
-
+    width: 30%;
+    align-self: center;
   }
-
-
 }

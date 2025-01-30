@@ -1,4 +1,7 @@
 
+
+import { useEffect } from "react"
+import { useState } from "react"
 import Header from "./components/1-header/header"
 import Hero from "./components/2-hero/Hero"
 import Main from "./components/3-main/Main"
@@ -7,25 +10,38 @@ import Footer from "./components/5-foooter/Footer"
 
 
 function App() {
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 350) {
+        setshowScrollBTN(true)
+      } else { setshowScrollBTN(false) }
+
+
+
+    })
+  }, [])
+
+  const [showScrollBTN, setshowScrollBTN] = useState(false);
+
+
 
 
   return (
     <div id="up" className="container">
       <Header />
-    
+
       <Hero />
-      <div className="divider"/>
+      <div className="divider" />
       <Main />
-      <div className="divider"/>
+      <div className="divider" />
       <Contact />
-      <div className="divider"/>
-      <Footer/>
+      <div className="divider" />
+      <Footer />
 
-
-<a href="#up">
-<button className="icon-keyboard_arrow_up  scroll2Top"></button>
-</a>
-
+     <a  style={{opacity: showScrollBTN? 1 : 0 , transition : "0.5s"} } href="#up">
+        <button className="icon-keyboard_arrow_up  scroll2Top"></button>
+      </a>
     </div>
   )
 }

@@ -1,4 +1,6 @@
 import './Hero.css'
+import Lottie from "lottie-react";
+import devAnimation from "./../../../public/animation/Animation - 1738250495743.json"
 const Hero = () => {
     return (
         <section className='hero flex'>
@@ -24,8 +26,17 @@ const Hero = () => {
 
             </div>
 
-            <div className="right-section animation border">
-               animation
+            <div className="right-section animation ">
+             
+            <Lottie
+                className='contact-animation'
+                style={{
+                    height:455
+                }}
+                
+                animationData={devAnimation} />
+
+
             </div>
         </section>
     );
